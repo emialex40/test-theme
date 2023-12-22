@@ -3,7 +3,10 @@
 
 ?>
 
-<h1>Hello</h1>
+<div class="container">
+    <h1>Hello</h1>
+</div>
+
 
 
 <?php get_footer(); ?>  

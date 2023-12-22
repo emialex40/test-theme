@@ -121,3 +121,11 @@ textarea {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
