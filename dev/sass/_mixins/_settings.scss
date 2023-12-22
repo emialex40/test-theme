@@ -1,0 +1,38 @@
+/* color */
+$white: #ffffff !default;
+$layout-dark: rgba(0, 0, 0, 0.53) !default;
+$layout-middle: rgba(0, 0, 0, 0.49) !default;
+$layout-light: rgba(0, 0, 0, 0.42) !default;
+$green: #13795D !default;
+$dark: #2E2E2E !default;
+$black: #000000 !default;
+$yellow: #FFDC19 !default;
+$grey: #707070 !default;
+$brown: #414141 !default;
+
+/* font-family */
+$roboto: 'Roboto-Regular', sans-serif !default;
+$roboto-bold: 'Roboto-Bold', sans-serif !default;
+$roboto-light: 'Roboto-Light', sans-serif !default;
+$roboto-slab: 'Roboto-Slab', sans-serif !default;
+
+/* mobile menu sittings */
+$mob_menu_bg: $white;
+
+
+/* hamburger sittings */
+$hamburger-inner-bg: $white !default;
+$hamburger-hover: $white !default;
+
+$hamburger-inner: 25px !default;
+$hamburger-inner-before: 25px !default;
+$hamburger-inner-after: 25px !default;
+$hamburger-inner-height: 2px !default;
+$hamburger-inner-top: -9px;
+$hamburger-inner-bottom: -18px;
+$hamburger-box-height: $hamburger-inner !default;
+$hamburger-width: $hamburger-inner !default;
+$hamburger-height: $hamburger-inner !default;
+
+
+	
