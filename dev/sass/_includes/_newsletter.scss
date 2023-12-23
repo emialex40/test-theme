@@ -1,5 +1,11 @@
 .newsletter {
   width: 100%;
+  .error {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+    color: #C2252C;
+  }
   &-body {
     width: 100%;
     max-width: 915px;
@@ -100,6 +106,34 @@
       line-height: 126%;
     }
   }
+  &-thankyou {
+    &-title {
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 126%;
+      color: #C2252C;
+      text-align: center;
+    }
+    &-subtitle {
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 160%;
+      color: #1b1b1b;
+      text-align: center;
+      margin: 14px 0 17px;
+    }
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 161px;
+        height: 135px;
+      }
+    }
+  }
 }
 
 .newsletter-check {
@@ -143,4 +177,8 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.hide {
+  display: none;
 }

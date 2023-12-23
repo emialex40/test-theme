@@ -1,7 +1,7 @@
 <?php
 
 get_header();
-
+$image_path = get_template_directory_uri() . '/img/thankyou.svg';
 ?>
 
     <section class="section-products">
@@ -33,7 +33,13 @@ get_header();
                                 </div>
                             </form>
                         </div>
-                        <div class="newsletter-thankyou" style="display: none;"></div>
+                        <div class="newsletter-thankyou hide">
+                            <h3 class="newsletter-thankyou-title"><?php _e('Thank you!', 'themename'); ?></h3>
+                            <p class="newsletter-thankyou-subtitle"><?php _e('The best deals on the way to you!', 'themename'); ?></p>
+                            <div class="newsletter-thankyou-img">
+                                <img width="161" height="135" src="<?php echo esc_url($image_path); ?>" alt="<?php _e('Thank you!', 'themename'); ?>">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
