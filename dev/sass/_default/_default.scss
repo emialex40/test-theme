@@ -311,6 +311,15 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0 auto;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
 .logo {
   width: 115px;
   height: auto;

@@ -1,6 +1,9 @@
 .section-products {
   width: 100%;
   padding: 100px 0;
+  @include _respond-to(480) {
+    padding: 50px 0;
+  }
 }
 
 .products {
