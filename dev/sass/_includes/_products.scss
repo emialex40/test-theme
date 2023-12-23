@@ -1,6 +1,9 @@
 .section-products {
   width: 100%;
   padding: 100px 0;
+  @include _respond-to(480) {
+    padding: 50px 0;
+  }
 }
 
 .products {
@@ -10,6 +13,15 @@
   grid-gap: 40px 20px;
   @include _respond-to(557) {
     grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
+  }
+  .favorite {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url(../img/favorite.svg) no-repeat center center/cover;
+    &:hover {
+      background: url(../img/favorite-red.svg) no-repeat center center/cover;
+    }
   }
 }
 

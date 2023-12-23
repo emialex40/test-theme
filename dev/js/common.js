@@ -1,53 +1,59 @@
 jQuery(document).ready(function ($) {
 
-    // ajax content filter
-    $('#manage').change(function () {
-        let postId = $(this).val();
-        let data = {action: 'post_filter', 'postId': postId};
+  $('.newsletter-email').focus(function() {
+    $('.error').remove()
+  });
 
-        $.ajax({
-            url: ajax_web_url,
-            data: data,
-            type: 'post',
-            success: function (response, data) {
-                // console.log(response)
-                $('#result').html(response);
-            },
-        });
-    });
+  $('.js-send').click(function (e) {
+    e.preventDefault()
 
+    let flag = false
+    const mailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/
+    const checkVal = $(this).
+      parent().
+      siblings('.newsletter-form-check').
+      find('.newsletter-check').
+      is(':checked')
 
-    // fancybox customize
-    $('.header_btn').click(function (e) {
-        e.preventDefault();
-        $.fancybox.open(
-            {
-                src: '#form',
-                type : 'inline',
-                btnTpl: {
-                    smallBtn: '<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}"><img src="/wp-content/uploads/2020/10/close.png" alt="Close"></button>'
-                }
-            }
-        );
-    });
+    const mailVal = $(this).
+      parent().
+      siblings('.newsletter-form-email').
+      find('.newsletter-email').
+      val()
 
-    $("[data-fancybox]").fancybox({
-        infobar: false,
-        // smallBtn: true,
-        buttons : [
-            'close'
-        ],
-    })
+    if (!mailRegex.test(mailVal) || mailVal == '') {
+      flag = true
+      $('.newsletter-form-email').append('<p class="error">The e-mail is not valid</p>')
+    }
 
-    // anchor code
-    var $page = $('html, body');
-    $('a[href*="#"]').click(function() {
-        event.preventDefault();
-        $page.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 1000);
-        return false;
-    });
+    if (!checkVal) {
+      flag = true
+      $('.newsletter-form-check').append('<p class="error">Please select checkbox</p>')
+    }
 
+    if (!flag) {
+      $.ajax({
+        type: 'POST',
+        url: myajax.url,
+        data: { action: 'newsletter_lead', email: mailVal },
+        success: function(response) {
+          if (response == '0') {
+            $('.newsletter-form').addClass('hide')
+            $('.newsletter-thankyou').removeClass('hide')
+          } else {
+            console.log('This email already exists')
+          }
+
+          setTimeout(function() {
+            location.reload();
+          }, 8000);
+        },
+        error: function(error) {
+          console.error('Request error:', error);
+        }
+      });
+    }
+
+  })
 
 })
