@@ -3,9 +3,11 @@
 
 ?>
 
-<div class="container">
-    <h1>Hello</h1>
-</div>
+<section class="section-products">
+    <div class="container">
+        <?php echo do_shortcode('[products limit="4" columns="4" order="ASC"]'); ?>
+    </div>
+</section>
 
 
 
